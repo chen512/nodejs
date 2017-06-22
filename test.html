@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container" style="overflow: auto">
+    <div class="left1" style="float: left;width:100px;height:200px;background-color: red"></div>
+    <div class="right1" style="background-color: grey;margin-left: 100px;height: 100px"></div>
+</div>
+<div class="imgContent" style="position: relative;display: flex">
+    <div class="left2" style="flex: 1"><img src="public/images/woman.png"></div>
+    <div class="right2" style="flex: 1"><img src="public/images/woman.png"></div>
+</div>
+<div class="imgContent" style="display: flex">
+    <div class="left3" style="flex: 1"><img src="public/images/zdx.png"></div>
+    <div class="right3" style="flex: 1"><img src="public/images/zdx.png"></div>
+</div>
+<ul class="one" style="color:red">
+    <li style="height: 20px;">123</li>
+    <li style="height: 30px;">4321</li>
+    <li style="height: 40px;">213231</li>
+</ul>
+</body>
+<script type="text/javascript">
+    var test = document.getElementsByClassName('left3')[0];
+    var uls = document.getElementsByClassName('one')[0];
+//    test.addEventListener('mousemove',function (e) {
+//        alert(e)
+//    },true);
+    test.onclick = function () {
+       alert(123)
+    }
+//    uls.onclick = function (e) {
+//        e.target.innerText = '4444'
+//    }
+    uls.addEventListener('live',function (e,index) {
+        for(var i = 0;i<5;i++){
+            (function (a){setTimeout(function () {
+                console.log(a)
+          e.target.innerText += '666666' + a;
+      },1000)
+        })(i)
+        }
+    })
+</script>
+</html>
