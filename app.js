@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var hello = require('./routes/hello');
 
 var app = express();
 
@@ -26,13 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 //for matt test
-app.use('/hello', function (req, res) {
-  // res.download('./public/images/zdx.png', function (res) {
-  //   console.log('yes')
-  // });
-  next()
-  res.send('hello the big world')
-});
+app.use('/hello', hello);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
